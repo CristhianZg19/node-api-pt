@@ -35,7 +35,7 @@ const verifyToken = (req, res, next) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Aquí deberías verificar las credenciales del usuario
+    // Validacion de las credenciales del usuario
     if (username === 'admin' && password === 'password') {
         const token = jwt.sign({ id: username }, JWT_SECRET, { expiresIn: '1h' });
         return res.json({ token });
